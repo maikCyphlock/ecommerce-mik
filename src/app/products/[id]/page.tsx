@@ -1,9 +1,7 @@
-import ShowProductInDetail from '@/components/ShowProductInDetail'
+import ShowProductInDetail from "@/components/product/show-product-detail";
 
-function page () {
-  return (
-    <ShowProductInDetail/>
-  )
+function page({ params }: { params: { id: string } }) {
+  return <ShowProductInDetail id={params.id} />;
 }
 
-export default page
+export default page;
