@@ -25,9 +25,6 @@
   "git": {
     "pre-commit": "lint-staged"
   },
-  "lint-staged": {
-    "*": "prettier --write --ignore-unknown"
-  },
   "dependencies": {
     "@clerk/nextjs": "^4.28.1",
     "next": "14.0.4",
