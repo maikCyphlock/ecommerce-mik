@@ -55,6 +55,11 @@ query GetProduct($id: ID!) {
         node {
           id
           title
+          availableForSale
+          selectedOptions {
+            name
+            value
+          }
         }
       }
     }
@@ -80,6 +85,7 @@ export const getProductsBySearchQuery = `query GetSimilarProduct($query: String 
       }
     }
   }`;
+
 export const getProductsQueryByQuantity = `
 query ProductsQuery ( $first: Int!, $before: String ) {
   products(first: $first, after: $before) {
@@ -113,3 +119,48 @@ query ProductsQuery ( $first: Int!, $before: String ) {
 }
 
 `;
+export const getProductsFromCartQuery = `
+query getProductsFromCartQuery($id: ID!) {
+  cart(id:  $id) {
+    id
+    totalQuantity
+    checkoutUrl
+    estimatedCost {
+      totalAmount {
+        amount
+        currencyCode
+      }
+      totalTaxAmount {
+        amount
+        currencyCode
+      }
+      subtotalAmount {
+        amount
+        currencyCode
+      }
+    }
+    lines(first: 100) {
+      edges {
+        node {
+          id
+          merchandise {
+            ... on ProductVariant {
+              id
+              image {
+                url
+              }
+            }
+          }
+          quantity
+          estimatedCost {
+            totalAmount {
+              amount
+              currencyCode
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}`;
