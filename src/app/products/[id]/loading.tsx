@@ -1,7 +1,7 @@
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
   return (
-    <div className="flex  gap-4 w-72">
+    <div className="grid place-content-center gap-4 w-72">
       <div className="skeleton h-32 w-full"></div>
       <div>
         <div className="skeleton h-4 w-28"></div>
