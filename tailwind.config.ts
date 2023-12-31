@@ -13,25 +13,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sans: "Onest Variable, sans-serif",
+      },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("tailwindcss-animate")],
   daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#ffd500",
-          secondary: "#fdc500",
-          accent: "#FFD60A",
-          neutral: "#001D3D",
-          "base-100": "#000814",
-          success: "#a4f371",
-          warning: "#e1e233",
-          error: "#ffcaca",
-          info: "#524000",
-        },
-      },
-    ],
+    themes: ["emerald"],
   },
 };
 export default config;
