@@ -1,24 +1,50 @@
 export interface GraphQLResponse {
-  data:       Data;
+  data: Data;
   extensions: Extensions;
 }
 
 export interface Data {
   products: Products;
+  search: Search;
+  product: Product;
+}
+
+export interface Product {
+  variants: any;
+  brand: any;
+  descriptionHtml: string | TrustedHTML;
+  variantBySelectedOptions: any;
+  availableForSale: any;
+  title: string;
+  images: Images;
+  description: string;
+  tags: string[];
+  productCategory: ProductCategory | null;
+  priceRange: PriceRange;
+  id: string;
+}
+
+export interface Search {
+  edges: Edge[];
+}
+
+export interface Edge {
+  node: Node;
 }
 
 export interface Products {
   nodes: ProductsNode[];
+  variants: ProductsNode[];
 }
 
 export interface ProductsNode {
-  title:           string;
-  images:          Images;
-  description:     string;
-  tags:            string[];
+  title: string;
+  images: Images;
+  description: string;
+  tags: string[];
   productCategory: ProductCategory | null;
-  priceRange:      PriceRange;
-  id:              string;
+  priceRange: PriceRange;
+  id: string;
 }
 
 export interface Images {
@@ -27,6 +53,7 @@ export interface Images {
 
 export interface ImagesNode {
   url: string;
+  src: string;
 }
 
 export interface PriceRange {
@@ -35,7 +62,7 @@ export interface PriceRange {
 }
 
 export interface VariantPrice {
-  amount:       string;
+  amount: string;
   currencyCode: CurrencyCode;
 }
 
@@ -57,23 +84,24 @@ export interface Extensions {
 
 export interface Cost {
   requestedQueryCost: number;
-  actualQueryCost:    number;
-  throttleStatus:     ThrottleStatus;
+  actualQueryCost: number;
+  throttleStatus: ThrottleStatus;
 }
 
 export interface ThrottleStatus {
-  maximumAvailable:   number;
+  maximumAvailable: number;
   currentlyAvailable: number;
-  restoreRate:        number;
+  restoreRate: number;
 }
 
 export interface IProducts {
-  id: string,
-  name: string,
-  description: string,
-  price:  VariantPrice,
-  imgUrl: ImagesNode[],
-  tags: string[],
-  category:   ProductCategory,
-  brand:      string,
+  id: string;
+  name: string;
+  description: string;
+  price: VariantPrice;
+  imgUrl: ImagesNode[];
+  className: string;
+  tags: string[];
+  category: ProductCategory;
+  brand: string;
 }
