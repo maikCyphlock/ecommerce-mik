@@ -8,7 +8,7 @@ query ProductsQuery {
           url
         }
       }
-      description
+      descriptionHtml
       tags
       
     
@@ -29,26 +29,36 @@ query ProductsQuery {
 `;
 
 export const getProductQuery = `
-query GetProduct($id: ID!) {
+query GetProduct($id: ID!,$selectedOptions: [SelectedOptionInput!] = {name: "", value: ""}) {
   product(id: $id) {
     title
+    availableForSale
     priceRange {
       maxVariantPrice {
         amount
         currencyCode
       }
     }
-    images(first: 3) {
+    images(first: 10) {
       nodes {
+        id
         src
       }
     }
     id
     tags
-    description
+    
+    descriptionHtml
     options(first: 20) {
       name
       values
+    }
+    variantBySelectedOptions(selectedOptions: $selectedOptions ) {
+      id
+      image{
+        url
+      }
+    
     }
     variants(first: 15) {
       edges {
@@ -96,7 +106,7 @@ query ProductsQuery ( $first: Int!, $before: String ) {
           url
         }
       }
-      description
+      descriptionHtml
       tags
       productCategory {
         productTaxonomyNode {
@@ -146,8 +156,12 @@ query getProductsFromCartQuery($id: ID!) {
           merchandise {
             ... on ProductVariant {
               id
+              title
               image {
                 url
+              }
+              product {
+                title
               }
             }
           }
