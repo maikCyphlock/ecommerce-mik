@@ -1,23 +1,18 @@
 import {
   productsAdapter,
   getProduct,
-  generateRandomNumbers,
   getProducts,
   FormatCurrency,
 } from "@/utils";
-import ProductCardSkeleton from "./product-card-skeleton";
-import ProductCard from "./product-card";
-import { Suspense } from "react";
-Image;
-
 import ProductVariants from "./product-variants";
 import AddCartBtn from "../ui/cart/add-cart-btn";
 import Image from "next/image";
 import { ProductGallery } from "./product-gallery";
+import ProductVariantGallery from "./product-variant-gallery";
 async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
   const selectedOptions = Object.entries(query).map(([key, value]) => ({
     name: key,
-    value,
+    value: value as string,
   }));
 
   const json = await getProduct(id, selectedOptions);
@@ -25,7 +20,6 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
 
   const variants = productsAdapter(await getProducts());
 
-  const randomNumbers = generateRandomNumbers(variants?.length - 1);
   const combinations: any = product?.variants?.edges?.map(
     ({ node: variant }) => ({
       id: variant.id,
@@ -44,10 +38,10 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
   return (
     <div>
       <section className="text-gray-600 body-font overflow-hidden">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-16 mx-auto">
           <div className="  flex lg:flex-nowrap flex-wrap gap-2 ">
             <ProductGallery product={product} />
-            <div className="lg:w-1/2 w-full lg:pl-10 lg:py-4 mt-6 lg:mt-0">
+            <div className="lg:w-1/2 w-full lg:pl-10   lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest ">
                 {product?.brand}
               </h2>
@@ -82,7 +76,7 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
                   </span>
                 ))}
               </div>
-              <div className="flex mt-2">
+              <div className="flex mt-4">
                 <span className="title-font font-medium text-2xl text-base-content">
                   {FormatCurrency(
                     product?.priceRange?.maxVariantPrice?.amount,
@@ -90,19 +84,17 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
                   )}
                 </span>
               </div>
-              <AddCartBtn combinations={combinations} />
+              {product?.availableForSale ? (
+                <AddCartBtn combinations={combinations} />
+              ) : (
+                <p className="mt-4 text-red-500">Out of Stock</p>
+              )}
             </div>
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 lg:grid-cols-4 gap-4 px-12">
-        {randomNumbers.map((n) => {
-          return (
-            <Suspense fallback={<ProductCardSkeleton />}>
-              <ProductCard key={n} {...variants?.[n]}></ProductCard>
-            </Suspense>
-          );
-        })}
+      <section className="grid grid-cols-1 lg:grid-cols-4 mb-12 gap-4 px-12">
+        <ProductVariantGallery variants={variants} />
       </section>
     </div>
   );
