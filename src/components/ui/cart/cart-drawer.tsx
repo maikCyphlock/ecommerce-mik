@@ -45,11 +45,6 @@ export const CartDrawer = ({ cartProducts }) => {
         </button>
       </div>
       <div className="drawer-side">
-        <input
-          htmlFor="my-drawer"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        />
         <ul
           role="list"
           aria-label="sidebar with items of cart"

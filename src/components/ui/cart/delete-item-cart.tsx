@@ -1,8 +1,9 @@
 "use client";
 import { useFormState, useFormStatus } from "react-dom";
 import { removeItem } from "./actions";
-import { XMark20Solid } from "../icons/HeroIcons";
+import { XMark20Solid } from "../icons/hero-icons";
 function DeleteItemCart({ merchandiseId }) {
+  // eslint-disable-next-line
   const [message, formAction] = useFormState(removeItem, null);
   console.log({ merchandiseId });
   const actionWithVariant = formAction.bind(null, merchandiseId);

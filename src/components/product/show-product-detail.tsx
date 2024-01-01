@@ -6,7 +6,6 @@ import {
 } from "@/utils";
 import ProductVariants from "./product-variants";
 import AddCartBtn from "../ui/cart/add-cart-btn";
-import Image from "next/image";
 import { ProductGallery } from "./product-gallery";
 import ProductVariantGallery from "./product-variant-gallery";
 async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
@@ -79,7 +78,7 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
               <div className="flex mt-4">
                 <span className="title-font font-medium text-2xl text-base-content">
                   {FormatCurrency(
-                    product?.priceRange?.maxVariantPrice?.amount,
+                    parseInt(product?.priceRange?.maxVariantPrice?.amount),
                     product?.priceRange?.maxVariantPrice?.currencyCode,
                   )}
                 </span>

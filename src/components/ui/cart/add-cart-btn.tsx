@@ -3,14 +3,14 @@ import React from "react";
 import { useFormState, useFormStatus } from "react-dom";
 import { addItemToCart } from "./actions";
 import { useSearchParams } from "next/navigation";
-import { PlusCircle } from "../icons/HeroIcons";
+import { PlusCircle } from "../icons/hero-icons";
 
-function AddCartBtn({ combinations }: {}) {
+function AddCartBtn({ combinations }: { combinations: any[] }) {
   const searchParams = useSearchParams()!;
   const color = searchParams.get("Color");
   const size = searchParams.get("Size");
-
-  const [cart, formAction] = useFormState(addItemToCart, null);
+  // eslint-disable-next-line
+  const [message, formAction] = useFormState(addItemToCart, null);
   function FindVariant(colorParam, sizeParam) {
     const productVariant = combinations.filter(
       (variant) => variant.color === colorParam && variant.size === sizeParam,

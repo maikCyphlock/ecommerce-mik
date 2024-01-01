@@ -1,11 +1,17 @@
 "use server";
-import { cartCreate, getCart, addToCart, updateCart } from "@/utils";
+import {
+  cartCreate,
+  getCart,
+  addToCart,
+  updateCart,
+  removeProductFromCart,
+} from "@/utils";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
-import { removeProductFromCart } from "@/utils/index";
+
 export async function addItemToCart(prevState: any, selectedVariantId: string) {
   let cartId = cookies().get("cartId")?.value;
-  let cart;
+  let cart: string | PromiseLike<string>;
   if (cartId) {
     cart = await getCart();
   }

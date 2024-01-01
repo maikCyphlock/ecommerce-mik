@@ -1,16 +1,11 @@
 "use client";
 import { useFormStatus } from "react-dom";
-import { MagnifyingGlass } from "../icons/HeroIcons";
-import {
-  usePathname,
-  useSearchParams,
-  useRouter,
-  redirect,
-} from "next/navigation";
+import { MagnifyingGlass } from "../icons/hero-icons";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 import { useCallback, useState } from "react";
 export default function SubmitSearch() {
-  //create a query param
+  // create a query param
   const [query, setQuery] = useState("");
   const router = useRouter();
   const pathname = usePathname();

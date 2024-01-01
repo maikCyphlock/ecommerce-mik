@@ -1,5 +1,5 @@
 import { getProductFromSearch } from "@/utils";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ProductCard from "@/components/product/product-card";
 async function SearchProduct({ query }) {
   if (!query) return null;

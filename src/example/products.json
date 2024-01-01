@@ -1,31 +1,31 @@
 {
-    "productos": [
-        {
-            "id": 1,
-            "nombre": "Zapatos deportivos",
-            "descripcion": "Zapatos deportivos de alta calidad para correr y entrenar.",
-            "precio": 100.00,
-            "imagen": "https://picsum.photos/seed/1/800",
-            "categoria": "Deportivos",
-            "marca": "Marca X"
-        },
-        {
-            "id": 2,
-            "nombre": "Zapatos formales",
-            "descripcion": "Zapatos formales elegantes para eventos especiales.",
-            "precio": 200.00,
-            "imagen": "https://picsum.photos/seed/2/800",
-            "categoria": "Formales",
-            "marca": "Marca Y"
-        },
-        {
-            "id": 3,
-            "nombre": "Zapatos casuales",
-            "descripcion": "Zapatos casuales cómodos para el uso diario.",
-            "precio": 50.00,
-            "imagen": "https://picsum.photos/seed/3/800",
-            "categoria": "Casuales",
-            "marca": "Marca Z"
-        }
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Zapatos deportivos",
+      "descripcion": "Zapatos deportivos de alta calidad para correr y entrenar.",
+      "precio": 100.0,
+      "imagen": "https://picsum.photos/seed/1/800",
+      "categoria": "Deportivos",
+      "marca": "Marca X"
+    },
+    {
+      "id": 2,
+      "nombre": "Zapatos formales",
+      "descripcion": "Zapatos formales elegantes para eventos especiales.",
+      "precio": 200.0,
+      "imagen": "https://picsum.photos/seed/2/800",
+      "categoria": "Formales",
+      "marca": "Marca Y"
+    },
+    {
+      "id": 3,
+      "nombre": "Zapatos casuales",
+      "descripcion": "Zapatos casuales cómodos para el uso diario.",
+      "precio": 50.0,
+      "imagen": "https://picsum.photos/seed/3/800",
+      "categoria": "Casuales",
+      "marca": "Marca Z"
+    }
+  ]
 }

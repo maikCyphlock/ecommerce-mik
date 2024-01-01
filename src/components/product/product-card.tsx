@@ -1,16 +1,7 @@
 import { IProducts } from "@/interfaces";
 import { FormatCurrency } from "@/utils";
 import { twMerge } from "tailwind-merge";
-function ProductCard({
-  imgUrl,
-  name,
-  description,
-  price,
-  id,
-  tags,
-  className,
-  ...products
-}: IProducts) {
+function ProductCard({ imgUrl, name, price, id, tags, className }: IProducts) {
   const ids = id?.slice(id.lastIndexOf("/") + 1, id.length);
 
   return (
@@ -20,7 +11,11 @@ function ProductCard({
       <a href={`/products/${ids}`}>
         <figure className="relative">
           <img
-            src={imgUrl?.src ?? (imgUrl?.[0]?.url || imgUrl)}
+            src={
+              (imgUrl?.[0]?.url || imgUrl) ??
+              Array.isArray(imgUrl) ??
+              imgUrl?.src
+            }
             alt={name}
             className="object-cover w-full"
           />

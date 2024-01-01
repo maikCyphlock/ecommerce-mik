@@ -1,6 +1,6 @@
 import React from "react";
 import { CartDrawer } from "./cart-drawer";
-import { getCart, getProductsFromCart } from "@/utils";
+import { getProductsFromCart } from "@/utils";
 import { cookies } from "next/headers";
 
 async function index() {

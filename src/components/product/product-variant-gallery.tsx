@@ -1,18 +1,8 @@
-import {
-  generateRandomNumbersBasedOnId,
-  getProducts,
-  productsAdapter,
-} from "@/utils";
+import { generateRandomNumbersBasedOnId } from "@/utils";
 import React from "react";
 import ProductCard from "./product-card";
 
-async function ProductVariantGallery({
-  id,
-  variants,
-}: {
-  id: string;
-  variants: any[];
-}) {
+async function ProductVariantGallery({ variants }: { variants: any[] }) {
   const randomNumbers = generateRandomNumbersBasedOnId(variants?.length - 1);
 
   return randomNumbers?.map((n) => {

@@ -1,8 +1,4 @@
-export interface GraphQLResponse {
-  data: Data;
-  extensions: Extensions;
-}
-
+/* eslint-disable no-use-before-define  */
 export interface Data {
   products: Products;
   search: Search;
@@ -12,7 +8,7 @@ export interface Data {
 export interface Product {
   variants: any;
   brand: any;
-  descriptionHtml: string | TrustedHTML;
+  descriptionHtml: string;
   variantBySelectedOptions: any;
   availableForSale: any;
   title: string;
@@ -24,12 +20,11 @@ export interface Product {
   id: string;
 }
 
-export interface Search {
-  edges: Edge[];
-}
-
 export interface Edge {
   node: Node;
+}
+export interface Search {
+  edges: Edge[];
 }
 
 export interface Products {
@@ -41,6 +36,7 @@ export interface ProductsNode {
   title: string;
   images: Images;
   description: string;
+  descriptionHtml: string;
   tags: string[];
   productCategory: ProductCategory | null;
   priceRange: PriceRange;
@@ -52,8 +48,8 @@ export interface Images {
 }
 
 export interface ImagesNode {
-  url: string;
-  src: string;
+  url?: string;
+  src?: string;
 }
 
 export interface PriceRange {
@@ -63,11 +59,7 @@ export interface PriceRange {
 
 export interface VariantPrice {
   amount: string;
-  currencyCode: CurrencyCode;
-}
-
-export enum CurrencyCode {
-  Usd = "USD",
+  currencyCode: "USD";
 }
 
 export interface ProductCategory {
@@ -97,11 +89,15 @@ export interface ThrottleStatus {
 export interface IProducts {
   id: string;
   name: string;
-  description: string;
-  price: VariantPrice;
-  imgUrl: ImagesNode[];
-  className: string;
-  tags: string[];
-  category: ProductCategory;
-  brand: string;
+  description?: string;
+  price?: VariantPrice;
+  imgUrl: ImagesNode | ImagesNode[];
+  className?: string;
+  tags?: string[];
+  category?: ProductCategory;
+  brand?: string;
+}
+export interface GraphQLResponse {
+  data: Data;
+  extensions: Extensions;
 }

@@ -1,12 +1,10 @@
 "use client";
 import { getDataFromSearch } from "./actions";
-
 import SubmitSearch from "./submit-btn";
 import { useFormState } from "react-dom";
 
-import { useEffect, useState } from "react";
-
 function SearchBar() {
+  // eslint-disable-next-line
   const [search, setSearch] = useFormState(getDataFromSearch, null);
 
   return (
