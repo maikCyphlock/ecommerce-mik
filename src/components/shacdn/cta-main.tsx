@@ -12,13 +12,16 @@ export function CtaMain() {
       <section className="w-full pt-6 lg:pt-16">
         <div className="grid max-h-[500px] lg:max-h-[500px] max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:grid-cols-2 md:gap-16">
           <div>
-            <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[4.20rem] mb-3">
+            <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter text-black sm:text-4xl md:text-5xl xl:text-[4rem] 2xl:text-[4.20rem] mb-3">
               MK
             </h1>
-            <h2 className="lg:leading-tighter text-3xl font-light tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] mb-3">
+            <h2 className="lg:leading-tighter text-3xl font-light tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] text-black/80 mb-3">
               Elevate Your Style. Elevate Your Life
             </h2>
-            <a href="#collections" className="btn mt-4 btn-neutral">
+            <a
+              href="#collections"
+              className="btn hover:text-black mt-4 bg-black text-white text-base"
+            >
               Explore Collection
             </a>
           </div>
