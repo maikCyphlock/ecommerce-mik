@@ -41,8 +41,6 @@
 
 </div>
 
-
-
 ## 🛠️ Stack
 
 - [**Next.js**](https://nextjs.org/) - React framework for building JavaScript applications.
@@ -64,17 +62,14 @@
  <img src="https://contrib.rocks/image?repo=maikcyphlock/ecommerce-mik" />
 </a>
 
-
-
 ## 🧞 Commands
 
-|   | Command     | Action                    |
+|     | Command          | Action                                        |
 | :-- | :--------------- | :-------------------------------------------- |
-| ⚙️ | `dev` or `start` | Starts local dev server at `localhost:3000`. |
-| ⚙️ | `build`     | Build your production site to `./dist/`.   |
-| ⚙️ | `preview`    | Preview your build locally, before deploying. |
+| ⚙️  | `dev` or `start` | Starts local dev server at `localhost:3000`.  |
+| ⚙️  | `build`          | Build your production site to `./dist/`.      |
+| ⚙️  | `preview`        | Preview your build locally, before deploying. |
 
 ## 🔑 License
 
 [MIT](#) - Created by [**maikcyphlock**](https://twitter.com/maikolaguilar11).
-
