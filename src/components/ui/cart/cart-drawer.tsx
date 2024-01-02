@@ -13,22 +13,11 @@ export const CartDrawer = ({
     <Sheet>
       <div className="drawer-content ">
         <SheetTrigger asChild>
-          <button className=" drawer-button" aria-label="open sidebar">
-            <label
-              htmlFor="my-drawer"
-              className="cursor-pointer flex justify-center items-center"
-              aria-label="cart"
-            >
-              <ShoppingBag className="h-6 w-6" />
-              {cartProducts?.totalQuantity && (
-                <span
-                  aria-label="cart items"
-                  className="badge badge-sm indicator"
-                >
-                  {cartProducts?.totalQuantity}
-                </span>
-              )}
-            </label>
+          <button className="flex  gap-1 items-center">
+            <ShoppingBag className="h-6 w-6" />
+            {cartProducts?.totalQuantity && (
+              <span aria-label="cart items">{cartProducts?.totalQuantity}</span>
+            )}
           </button>
         </SheetTrigger>
       </div>
