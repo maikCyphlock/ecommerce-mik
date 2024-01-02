@@ -21,7 +21,10 @@ function AddCartBtn({ combinations }: { combinations: any[] }) {
   }
 
   return (
-    <form className="flex justify-end" action={FindVariant(color, size)}>
+    <form
+      className="flex justify-end flex-col lg:flex-row"
+      action={FindVariant(color, size)}
+    >
       <SubmitButton />
     </form>
   );
