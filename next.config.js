@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  //add swc
+  // add swc
   swcMinify: true,
   images: {
     remotePatterns: [

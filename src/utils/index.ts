@@ -44,7 +44,7 @@ export const updateCart = async (
         }
       `,
       variables: {
-        cartId: cartId,
+        cartId,
         lines,
       },
     },
@@ -103,7 +103,7 @@ const fetchDataFromShopify = async (
       query: gql`
         ${gqlQuery}
       `,
-      variables: variables,
+      variables,
     }),
     ...NextProps,
   });
@@ -117,7 +117,7 @@ export const getProductFromSearch = async (query: string) => {
       ${SearchQuery}
     `,
     variables: {
-      query: query,
+      query,
     },
   });
 
@@ -134,7 +134,7 @@ export const getProduct = async (
     gqlQuery: getProductQuery,
     variables: {
       id: `gid://shopify/Product/${id}`,
-      selectedOptions: selectedOptions,
+      selectedOptions,
     },
   });
 
@@ -206,7 +206,7 @@ export const addToCart = async (
       }
     `,
     variables: {
-      cartId: cartId,
+      cartId,
       lines,
     },
   });
@@ -220,7 +220,7 @@ export const removeProductFromCart = async (cartId, LineId) => {
     `,
     variables: {
       lineIds: LineId,
-      cartId: cartId,
+      cartId,
     },
   });
   return res.json();
@@ -236,7 +236,7 @@ export const FormatCurrency = (value: number, currency: string) => {
   try {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: currency,
+      currency,
     }).format(value);
   } catch (e) {
     console.error(e);
