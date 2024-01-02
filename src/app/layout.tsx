@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import { ensureStartsWith } from "@/lib/utils";
+import Footer from "@/components/layout/footer";
 
 const { TWITTER_CREATOR, TWITTER_SITE, SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -43,9 +44,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
-          <Navbar />
-          {children}
+        <body className="flex flex-col min-h-screen">
+          <div className="flex-1">
+            <Navbar />
+            {children}
+          </div>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

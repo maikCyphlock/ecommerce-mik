@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/footer";
 import ShowProduct from "@/components/product/show-product";
 import { CtaMain } from "@/components/shacdn/cta-main";
 export default function Home() {
@@ -6,7 +5,6 @@ export default function Home() {
     <>
       <CtaMain />
       <ShowProduct id="collections" />
-      <Footer />
     </>
   );
 }
