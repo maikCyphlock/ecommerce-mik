@@ -24,7 +24,7 @@ function user() {
   return (
     <>
       {!isSignedIn ? (
-        <a href="auth/login">
+        <a href="/auth/login">
           <UserCircleSolid className="h-6 w-6  fill-black" />
         </a>
       ) : (
