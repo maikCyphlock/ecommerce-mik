@@ -2,6 +2,7 @@ import { FormatCurrency } from "@/utils";
 import { Sheet, SheetTrigger, SheetContent } from "../sheet";
 import DeleteItemCart from "./delete-item-cart";
 import EditItemQuantityButton from "./edit-cart-btn";
+import { CartProducts } from "@/interfaces/cart";
 
 export const ShoppingBag = (props) => (
   <svg
@@ -21,7 +22,11 @@ export const ShoppingBag = (props) => (
     ></path>
   </svg>
 );
-export const CartDrawer = ({ cartProducts }) => {
+export const CartDrawer = ({
+  cartProducts,
+}: {
+  cartProducts: CartProducts;
+}) => {
   return (
     <Sheet>
       <div className="drawer-content ">
@@ -68,7 +73,9 @@ export const CartDrawer = ({ cartProducts }) => {
                   <p>{node?.merchandise?.title}</p>
                   <span>
                     {FormatCurrency(
-                      node.estimatedCost?.totalAmount?.amount,
+                      parseFloat(
+                        cartProducts?.estimatedCost?.totalAmount?.amount,
+                      ),
                       node?.estimatedCost?.totalAmount?.currencyCode,
                     )}
                   </span>
@@ -91,7 +98,7 @@ export const CartDrawer = ({ cartProducts }) => {
             <p className="flex gap-2 font-bold">
               <span>
                 {FormatCurrency(
-                  cartProducts?.estimatedCost?.subtotalAmount?.amount,
+                  parseFloat(cartProducts?.estimatedCost?.totalAmount?.amount),
                   cartProducts?.estimatedCost?.subtotalAmount?.currencyCode,
                 )}
               </span>
@@ -103,7 +110,7 @@ export const CartDrawer = ({ cartProducts }) => {
             <p className="flex gap-2 font-bold">
               <span>
                 {FormatCurrency(
-                  cartProducts?.estimatedCost?.totalTaxAmount?.amount,
+                  parseFloat(cartProducts?.estimatedCost?.totalAmount?.amount),
                   cartProducts?.estimatedCost?.totalTaxAmount?.currencyCode,
                 )}
               </span>
@@ -115,7 +122,7 @@ export const CartDrawer = ({ cartProducts }) => {
             <p className="flex gap-2 font-bold">
               <span>
                 {FormatCurrency(
-                  cartProducts?.estimatedCost?.totalAmount?.amount,
+                  parseFloat(cartProducts?.estimatedCost?.totalAmount?.amount),
                   cartProducts?.estimatedCost?.totalAmount?.currencyCode,
                 )}
               </span>
@@ -125,6 +132,7 @@ export const CartDrawer = ({ cartProducts }) => {
           <a
             href={cartProducts?.checkoutUrl}
             className="btn btn-primary btn-block "
+            disabled={cartProducts?.lines.edges.length ? false : true}
           >
             Checkout
           </a>
