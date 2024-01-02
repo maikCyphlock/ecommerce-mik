@@ -26,14 +26,17 @@ function ProductVariants({ product }) {
   };
 
   return (
-    <div className="flex ml-6  lg:flex-col gap-6">
+    <div className="flex ml-6  flex-col lg:flex-col gap-6">
       {product?.options?.map((option) => (
         <section key={option.name}>
           <span className="mr-3 font-bold">{option.name}</span>
           <div className="relative">
-            <div className="flex  gap-3">
+            <div className="flex   gap-3">
               {option.values.map((value) => (
-                <div key={value.id} className="flex items-center gap-2">
+                <div
+                  key={value.id}
+                  className="flex flex-col items-center gap-2"
+                >
                   <span className="label-text">{value}</span>
                   <input
                     type="radio"
