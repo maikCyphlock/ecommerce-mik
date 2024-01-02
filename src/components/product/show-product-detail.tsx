@@ -8,6 +8,7 @@ import ProductVariants from "./product-variants";
 import AddCartBtn from "../ui/cart/add-cart-btn";
 import { ProductGallery } from "./product-gallery";
 import ProductVariantGallery from "./product-variant-gallery";
+
 async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
   const selectedOptions = Object.entries(query).map(([key, value]) => ({
     name: key,
@@ -15,7 +16,7 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
   }));
 
   const json = await getProduct(id, selectedOptions);
-  const { product } = json.data;
+  const product = json.data.product;
 
   const variants = productsAdapter(await getProducts());
 
@@ -33,7 +34,7 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
       ),
     }),
   );
-  console.dir({ combinations }, { depth: null });
+
   return (
     <div>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -41,9 +42,6 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
           <div className="  flex lg:flex-nowrap flex-wrap gap-2 ">
             <ProductGallery product={product} />
             <div className="lg:w-1/2 w-full lg:pl-10   lg:mt-0">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest ">
-                {product?.brand}
-              </h2>
               <h1 className="text-base-content text-3xl title-font font-medium mb-1">
                 {product?.title}
               </h1>
@@ -78,7 +76,7 @@ async function ShowProductInDetail({ id, query }: { id: string; query: any }) {
               <div className="flex mt-4">
                 <span className="title-font font-medium text-2xl text-base-content">
                   {FormatCurrency(
-                    parseInt(product?.priceRange?.maxVariantPrice?.amount),
+                    parseFloat(product?.priceRange?.maxVariantPrice?.amount),
                     product?.priceRange?.maxVariantPrice?.currencyCode,
                   )}
                 </span>
