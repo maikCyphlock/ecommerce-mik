@@ -111,13 +111,21 @@ export const CartDrawer = ({
             </p>
           </div>
           <div className="divider"></div>
-          <a
-            href={cartProducts?.checkoutUrl}
-            className="btn btn-primary btn-block "
-            disabled={!cartProducts?.lines.edges.length}
-          >
-            Checkout
-          </a>
+          {cartProducts?.lines.edges.length ? (
+            <a
+              href={cartProducts?.checkoutUrl}
+              className="btn btn-primary btn-block "
+            >
+              Checkout
+            </a>
+          ) : (
+            <button
+              title="Cart is empty"
+              type="submit"
+              disabled
+              className="btn btn-primary btn-block "
+            ></button>
+          )}
         </section>
       </SheetContent>
     </Sheet>
