@@ -12,7 +12,7 @@ function Navbar() {
         </a>
       </div>
       <SearchBar />
-      <div className="flex gap-2">
+      <div className="flex gap-2 items-stretch">
         <Cart />
 
         <div tabIndex={0} role="button" className="h-8 aspect-square">
