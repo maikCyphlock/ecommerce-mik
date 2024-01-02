@@ -1,8 +1,9 @@
+import { IProduct } from "./product";
 /* eslint-disable no-use-before-define  */
 export interface Data {
   products: Products;
   search: Search;
-  product: Product;
+  product: IProduct;
 }
 
 export interface Product {
