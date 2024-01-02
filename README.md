@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<img src="public/logo.png" height="50px"/> 
+<h3>
+ MK Ecommerce - An Online Shopping
+</h3>
+<p>My latest project showcasing modern e-commerce technology.</p>
+</div>
 
-## Getting Started
+<div align="center">
+  <a href="#" target="_blank">
+    Preview
+  </a>
+  <span>&nbsp;✦&nbsp;</span>
+  <a href="#-getting-started">
+    Getting Started
+  </a>
+  <span>&nbsp;✦&nbsp;</span>
+  <a href="#-commands">
+    Commands
+  </a>
+  <span>&nbsp;✦&nbsp;</span>
+  <a href="#-license">
+    License
+  </a>
+  <span>&nbsp;✦&nbsp;</span>
+  <span>&nbsp;✦&nbsp;</span>
+  <a href="https://twitter.com/maikolaguilar11">
+    Twitter
+  </a>
+</div>
 
-First, run the development server:
+<p></p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<div align="center">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Next.js Badge](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=fff&style=flat)
+![Shopify Badge](https://img.shields.io/badge/Shopify-96bf7a?logo=shopify&logoColor=fff&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![Shadcn + DaisyUI Badge](https://img.shields.io/badge/Shadcn%20%2B%20DaisyUI-786449?logo=daisyui&logoColor=fff&style=flat)
+![Clerk.js Badge](https://img.shields.io/badge/Clerk.js-3f51b5?logo=clerk&logoColor=fff&style=flat)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [**Next.js**](https://nextjs.org/) - React framework for building JavaScript applications.
+- [**Shopify**](https://www.shopify.com/) - Commerce platform that allows anyone to set up an online store.
+- [**Tailwindcss**](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+- [**shadcn + daisyUI**](https://daisyui.com/) - Theming plugin for Tailwind CSS.
+- [**Clerk.js**](https://clerk.dev/) - User authentication and management for your app.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+1. Fork or clone this repository.
+2. npm install.
+3. npm run dev.
+4. Open [**http://localhost:3000**](http://localhost:3000/) with your browser to see the result 🚀
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a href="https://github.com/maikcyphlock/ecommerce-mik/graphs/contributors">
+ <img src="https://contrib.rocks/image?repo=maikcyphlock/ecommerce-mik" />
+</a>
+
+
+
+## 🧞 Commands
+
+|   | Command     | Action                    |
+| :-- | :--------------- | :-------------------------------------------- |
+| ⚙️ | `dev` or `start` | Starts local dev server at `localhost:3000`. |
+| ⚙️ | `build`     | Build your production site to `./dist/`.   |
+| ⚙️ | `preview`    | Preview your build locally, before deploying. |
+
+## 🔑 License
+
+[MIT](#) - Created by [**maikcyphlock**](https://twitter.com/maikolaguilar11).
+
