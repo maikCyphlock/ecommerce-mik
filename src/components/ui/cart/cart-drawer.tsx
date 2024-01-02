@@ -1,6 +1,5 @@
 import { FormatCurrency } from "@/utils";
 import { Sheet, SheetTrigger, SheetContent } from "../sheet";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import DeleteItemCart from "./delete-item-cart";
 import EditItemQuantityButton from "./edit-cart-btn";
 
